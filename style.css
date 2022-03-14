@@ -144,18 +144,547 @@ h5{
     opacity: 50%;
     position: absolute;
     justify-content: center;
-    width: --webkit-fill-available;
+    width: -webkit-fill-available;
 }
+
 
 
 /* ===========================================  Home Page =========================================== */
 
+.home__container{
+    display: grid;
+    grid-template-columns: 4% 56% 40%;
+    padding: 1rem 0rem;
+    height: 100vh;
+}
+.left-bar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.middle{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+}
+.text h2:first-child{
+    font-size: 1.2rem;
+}
+.text h2:nth-child(2){
+    font-size: 1.8rem;
+}
+.button{
+    padding-top: 2rem;
+}
+.button a{
+    border-radius: 2rem;
+}
+
+/* Right Side */
+.right{
+    align-items: center;
+    position: relative;
+}
+.right .place-image{
+    position: relative;
+    width: 100%;
+    bottom: -5%;
+}
+.right .place-image img{
+    width: 50rem;
+    max-width: 51vw;
+    min-width: 37rem;
+    position: relative;
+    filter: drop-shadow(0px 0px 6px #000000);
+    right: 7rem;
+}
+
+.logo-js{
+    background: var(--color-black);
+    font-size: 4vw;
+    position: absolute;
+    border-radius: 50%;
+    padding: 1rem;
+    top: 1rem;
+    filter: drop-shadow(3px 0 4px var(--color-black));
+    min-width: 55px;
+    width: 5vw;
+    left: 3rem;
+}
+.logo-brackets{
+    background: var(--color-black);
+    font-size: 4vw;
+    position: absolute;
+    border-radius: 50%;
+    padding: 1rem;
+    top: 4rem;
+    filter: drop-shadow(3px 0 4px var(--color-black));
+    min-width: 55px;
+    width: 5vw;
+    right: 0rem;
+}
+.logo-vue{
+    background: var(--color-black);
+    font-size: 4vw;
+    position: absolute;
+    border-radius: 50%;
+    padding: 1rem;
+    bottom: 6rem;
+    filter: drop-shadow(3px 0 4px var(--color-black));
+    min-width: 55px;
+    width: 5vw;
+    left: 0rem;
+}
+
+.black-circle{
+    background: #28282d;
+    width: 35vw;
+    border-radius: 50%;
+    height: 35vw;
+    position: absolute;
+    left: -7rem;
+    bottom: 0rem;
+    min-width: 23rem;
+    min-height: 23rem;
+    z-index: -1;
+    max-width: 35rem;
+    max-height: 35rem;
+}
+.socials{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.socials .line{
+    width: 3px;
+    background: white;
+    height: 3rem;
+}
+
+
+/* =========================================== NAVBAR =========================================== */
+
+.navbar{
+    z-index: 100;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    position: fixed;
+    bottom: 2rem;
+}
+.menus{
+    background-color: var(--color-navigation);
+    display: flex;
+    width: fit-content;
+    gap: 1rem;
+    padding: .8rem 2rem;
+    border-radius: 3rem;
+}
+.menus span a{
+    color: white;
+    font-size: 1.1rem;
+}
+
+/* =========================================== ABOUT ME =========================================== */
+
+.about__container{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+.about__content{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    width: fit-content;
+    padding-top: 5rem;
+}
+.list{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+}
+.list .point span{
+    position: absolute;
+    padding: .4rem;
+    background-color: var(--color-secondary);
+    border-radius: 50%;
+}
+.point{
+    padding-bottom: 1rem;
+}
+.profile-photo img{
+    width: 15rem;
+    border-radius: 50%;
+    border: var(--image-border);
+}
+.list{
+    padding-top: 2rem;
+}
+
+
+
+/* =========================================== HONORS =========================================== */
+
+.honors__container{
+    height: fit-content;
+}
+.honors{
+    background: var(--color-gray);
+    padding: 3rem;
+    border-radius: 2rem;
+    margin-bottom: 1rem;
+}
+.honors__container h4{
+    padding: 3rem 0rem;
+}
+.certificates{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 3rem;
+}
+.details summary{
+    list-style: inside none;
+}
+.collapse{
+    --sp-sm: 1rem;
+    --sp-md: 2rem;
+    width: 80%;
+    max-width: 20rem;
+    margin: 0 auto;
+    border-radius: .8rem;
+    border: .1rem solid #ecececb8;
+    box-shadow: .1rem .1rem .3rem rgb(0 0 0 / 25%);
+    transition: box-shadow 250ms;
+    will-change: box-shadow;
+    background: var(--color-black);
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+.collapse:hover{
+    box-shadow: .1rem .1rem 1.8rem rgba(48,41,41,.26);
+}
+.collapse .title{
+    position: relative;
+    padding: var(--sp-md);
+    font-size: .7rem;
+    font-weight: 700;
+    user-select: none;
+    cursor: pointer;
+}
+.collapse .title::after{
+    position: absolute;
+    content: "→";
+    right: var(--sp-md);
+    transform: translateY(-50%);
+    top: 50%;
+}
+.collapse[open] .title::after{
+    content: "↓";
+}
+
+.collapse .description{
+    padding: var(--sp-md);
+    margin: 0;
+    font-size: .8rem;
+}
+.collapse .divider{
+    margin: 0 var(--sp-md);
+    border-radius: 99em;
+    border: .1rem solid currentColor;
+    background: currentColor;
+    color: #e1e1e1;
+}
+.collapse .description:not(:first-of-type){
+    padding-top: 0;
+}
+
+
+/* =========================================== CONTACT =========================================== */
+
+#contact{
+    height: 100vh;
+}
+#contact__container{
+    background: var(--color-gray);
+    color: var(--color-white);
+    margin: 0;
+}
+.container.contact__container{
+    padding: 2rem 0 0 0;
+
+}
+.contact-information{
+    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 8rem;
+    font-size: .9rem;
+    background: var(--color-gray);
+    border-radius: 2rem;
+}
+.contact__container p{
+    color: var(--color-white);
+}
+.contact__left{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-left: 3rem;
+}
+#sendbtn{
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.contact__socials{
+    display: flex;
+    gap: 1rem;
+}
+.contact__socials li a{
+    color: var(--color-white);
+    font-size: 1.3rem;
+    transition: all 400ms ease;
+}
+.contact__socials a:hover{
+    color: var(--color-black);
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+    width: 90%;
+}
+form input ,textarea{
+    padding: 1rem 6rem 1rem 1rem;
+}
+
+/* =========================================== MEDIA QUERIES (600px) =========================================== */
+@media screen and (max-width: 600px){
+
+
+
+
+/* BASIC */
+.maintitle{
+    font-size: 1.2rem;
+    padding: 2rem 0 0 0;
+}
+h5{
+    font-size: .9rem;
+}
+.second{
+    display: flex;
+    opacity: 50%;
+    position: absolute;
+    padding: 2rem 0 0 0;
+    justify-content: center;
+}
+
+/* HOME */
+.right.rightbc{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 90vw;
+}
+.home__container{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    justify-content: space-between;
+    padding: 1rem 0 0 0;
+}
+.left-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.black-circle{
+    background: #28282d;
+    width: 35vw;
+    border-radius: 50%;
+    height: 35vw;
+    position: relative;
+    left: auto;
+    bottom: 0rem;
+    min-width: 19rem;
+    min-height: 19rem;
+    z-index: -1;
+    justify-content: center;
+}
+.right .place-image{
+    display: flex;
+    bottom: 0;
+    z-index: -3;
+    overflow: hidden;
+}
+.right .place-image img{
+    width: 50vw;
+    min-width: 31rem;
+    position: relative;
+    filter: drop-shadow(0px 0px 6px #000000);
+    right: 7rem;
+}
+.logo-js{
+    background: var(--color-black);
+    font-size: 4vw;
+    position: absolute;
+    top: 1rem;
+    border-radius: 50%;
+    padding: 1rem;
+    filter: drop-shadow(3px 0px 4px var(--color-black));
+    min-width: 55px;
+    width: 5vw;
+    left: 3rem;
+}
+.logo-brackets{
+    background: var(--color-black);
+    font-size: 4vw;
+    position: absolute;
+    top: 4rem;
+    border-radius: 50%;
+    padding: 1rem;
+    filter: drop-shadow(3px 0px 4px var(--color-black));
+    min-width: 55px;
+    width: 5vw;
+    right: 0rem;
+}
+.logo-vue{
+    background: var(--color-black);
+    font-size: 4vw;
+    position: absolute;
+    bottom: 6rem;
+    border-radius: 50%;
+    padding: 1rem;
+    filter: drop-shadow(3px 0px 4px var(--color-black));
+    min-width: 55px;
+    width: 5vw;
+    left: 0rem;
+}
+
+/* About Me */
+.about__container{
+    height: fit-content;
+}
+.about__container,.honors__container,.contact__container{
+    padding-top: 2rem;
+}
+
+.about__content{
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    padding-top: 0;
+}
+.list{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 1.8rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    border: 1px solid rgb( 87 217 164);
+}
+.profile-photo img{
+    width: 10rem;
+    border-radius: 50%;
+    border: var(--image-border);
+}
+.maintitle{
+    font-size: 1.2rem;
+    padding-bottom: 0rem;
+}
+
+/* HONORS */
+
+.honors{
+    background: var(--color-gray);
+    padding: 1rem;
+    border-radius: 2rem;
+}
+
+.honors__container h4{
+    padding: 3rem 0;
+    font-size: 1rem;
+    text-align: center;
+}
+.certificates{
+    display: flex;
+    flex-direction: column;
+}
+
+/* CONTACT */
+
+.contact-information{
+    font-size: .9rem;
+    background: var(--color-gray);
+    border-radius: 2rem;
+    gap: 0;
+    display: flex;
+    flex-direction: column;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+.contact__left{
+    margin-left: 0rem;
+    text-align: center;
+    width: 80%;
+}
+.contact__socials{
+    justify-content: center;
+}
+.contact__left h2{
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+    padding-top: 2rem;
+}
+.contact__left h2 p{
+    font-size: .5rem;
+}
+.contact-information{
+    position: inherit;
+    align-items: center;
+}
+.contact__container p{
+    color: var(--color-white);
+    font-size: .8rem;
+}
+.contact__container h2{
+    padding-bottom: 2rem;
+}
+.contact__left h2{
+    font-size: 1rem;
+    padding-bottom: .5rem;
+    padding-top: 1rem;
+}
+.form-area{
+    display: flex;
+    justify-content: center;
+}
 
 
 
 
 
 
+
+
+
+
+}
 
 
 
